@@ -7674,9 +7674,9 @@ function library:CreateWindow(options, ...)
 	end
 	return windowFunctions
 end
-library.NewWindow = library.CreateWindow
-library.AddWindow = library.CreateWindow
-library.Window = library.CreateWindow
-library.W = library.CreateWindow
+library.NewWindow = nil
+library.AddWindow = nil
+library.Window = nil
+library.W = nil
 Dropdown = nil
 return library, library_flags, library.subs
