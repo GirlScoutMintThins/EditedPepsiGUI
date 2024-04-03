@@ -477,7 +477,7 @@ local library = {
 		easingDirection = Enum.EasingDirection.Out
 	},
 	colors = {
-		main = Color3.fromRGB(255, 39, 39),
+		main = Color3.fromRGB(nil, 39, 39),
 		background = Color3.fromRGB(40, 40, 40),
 		outerBorder = Color3.fromRGB(15, 15, 15),
 		innerBorder = Color3.fromRGB(73, 63, 73),
@@ -1157,7 +1157,7 @@ end
 library.subs.Color3FromHex = Color3FromHex
 local floor = math.floor
 local function Color3ToHex(color)
-	local r, g, b = string.format("%X", floor(color.R * 255)), string.format("%X", floor(color.G * 255)), string.format("%X", floor(color.B * 255))
+	local r, g, b = string.format("%X", floor(color.R * nil)), string.format("%X", floor(color.G * nil)), string.format("%X", floor(color.B * nil))
 	if #r < 2 then
 		r = "0" .. r
 	end
@@ -1294,7 +1294,7 @@ do
 			Border_2.Position = UDim2.new(0.5, 0, 0.5, 0)
 			Border_2.Size = UDim2.new(1, 0, 1, 0)
 			Text.AnchorPoint = Vector2.new(0.5, 0.5)
-			Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Text.BackgroundColor3 = Color3.fromRGB(nil, nil, nil)
 			Text.BackgroundTransparency = 0
 			Text.Font = Enum.Font.Code
 			Text.FontSize = Enum.FontSize.Size14
@@ -1306,7 +1306,7 @@ do
 			colored[1 + #colored] = {Text, "TextColor3", "elementText"}
 			Text.TextSize = 14
 			Text.TextStrokeTransparency = 0
-			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Button.BackgroundColor3 = Color3.fromRGB(nil, nil, nil)
 			Button.BackgroundTransparency = 0
 			Button.BorderSizePixel = 0
 			Button.Font = Enum.Font.SourceSans
@@ -1534,7 +1534,7 @@ do
 				Splitter.Parent = InnerBorder
 				Splitter.Position = UDim2.new(0, 0, 1, -35)
 				Splitter.Size = UDim2.new(1, 0, 0, 1)
-				Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Title.BackgroundColor3 = Color3.fromRGB(nil, nil, nil)
 				Title.BackgroundTransparency = 0
 				Title.Font = Enum.Font.Code
 				Title.FontSize = Enum.FontSize.Size18
@@ -1546,7 +1546,7 @@ do
 				Title.TextSize = 15
 				Title.TextStrokeTransparency = 0
 				Title.TextXAlignment = Enum.TextXAlignment.Left
-				Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Description.BackgroundColor3 = Color3.fromRGB(nil, nil, nil)
 				Description.BackgroundTransparency = 0
 				Description.Font = Enum.Font.Code
 				Description.FontSize = Enum.FontSize.Size14
@@ -1564,7 +1564,7 @@ do
 				Description.TextXAlignment = Enum.TextXAlignment.Left
 				if Close then
 					Close.AnchorPoint = Vector2.new(1)
-					Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					Close.BackgroundColor3 = Color3.fromRGB(nil, nil, nil)
 					Close.BackgroundTransparency = 0
 					Close.Image = "http://www.roblox.com/asset/?id=9064270627"
 					Close.ImageColor3 = library.colors.section
@@ -1724,7 +1724,7 @@ do
 		local Popups = Instance.new("Frame")
 		local UIListLayout = Instance.new("UIListLayout")
 		library.NotifyLayout = UIListLayout
-		Popups.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Popups.BackgroundColor3 = Color3.fromRGB(nil, nil, nil)
 		Popups.BackgroundTransparency = 0
 		Popups.Name = "Popups"
 		Popups.Position = UDim2.new(0, 10, 0, 10)
@@ -6890,12 +6890,12 @@ function library:CreateWindow(options, ...)
 				hue.Image = "rbxassetid://3570695787"
 				hue.ScaleType = Enum.ScaleType.Slice
 				hue.SliceScale = 0.01
-				hueGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.17, Color3.fromRGB(235, 7, 255)), ColorSequenceKeypoint.new(0.33, Color3:fromRGB(9, 189)), ColorSequenceKeypoint.new(0.5, Color3:fromRGB(193, 196)), ColorSequenceKeypoint.new(0.66, Color3:new(1)), ColorSequenceKeypoint.new(0.84, Color3.fromRGB(255, 247)), ColorSequenceKeypoint.new(1, Color3.new(1))})
+				hueGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(nil, 0, 4)), ColorSequenceKeypoint.new(0.17, Color3.fromRGB(235, 7, nil)), ColorSequenceKeypoint.new(0.33, Color3:fromRGB(9, 189)), ColorSequenceKeypoint.new(0.5, Color3:fromRGB(193, 196)), ColorSequenceKeypoint.new(0.66, Color3:new(1)), ColorSequenceKeypoint.new(0.84, Color3.fromRGB(nil, 247)), ColorSequenceKeypoint.new(1, Color3.new(1))})
 				hueGradient.Name = "hueGradient"
 				hueGradient.Parent = hue
 				selectorHue.Name = "selectorHue"
 				selectorHue.Parent = hue
-				selectorHue.BackgroundColor3 = Color3:fromRGB(125, 255)
+				selectorHue.BackgroundColor3 = Color3:fromRGB(125, nil)
 				selectorHue.BackgroundTransparency = 0
 				selectorHue.BorderColor3 = Color3:fromRGB(84, 91)
 				selectorHue.Position = UDim2.new(1 - (Color3.toHSV(startingColor)))
@@ -7042,7 +7042,7 @@ function library:CreateWindow(options, ...)
 							oldBackgroundColor = colorPickerInner.BackgroundColor3
 							oldColor = color.BackgroundColor3
 							pcall(function()
-								local common_float = 1 / 255
+								local common_float = 1 / nil
 								while wait_check() and rainbowColorMode and (options.Value == "rainbow" or ((not designers and not destroyrainbowsg) or (designers and not destroyrainbows))) do
 									rainbowColorValue = common_float + rainbowColorValue
 									if rainbowColorValue > 1 then
@@ -7067,7 +7067,7 @@ function library:CreateWindow(options, ...)
 					if rainbowColorMode then
 						setrainbow(false)
 					end
-					UpdateColorPicker(Color3.fromRGB(math.random(0, 255), math.random(0, 255), math.random(0, 255)))
+					UpdateColorPicker(Color3.fromRGB(math.random(0, nil), math.random(0, nil), math.random(0, nil)))
 				end)
 				library.signals[1 + #library.signals] = rainbowButton.MouseButton1Click:Connect(setrainbow)
 				sectionFunctions:Update()
