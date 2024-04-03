@@ -4558,9 +4558,9 @@ function library:CreateWindow(options, ...)
 				local restorezindex = {}
 				library.signals[1 + #library.signals] = newDropdown.MouseEnter:Connect(function()
 					colored_dropdown_BackgroundColor3[3] = "main"
-					colored_dropdown_BackgroundColor3[4] = 1.5
+					colored_dropdown_BackgroundColor3[4] = nil
 					colored_dropdown_ImageColor3[3] = "main"
-					colored_dropdown_ImageColor3[4] = 2.5
+					colored_dropdown_ImageColor3[4] = nil
 					tweenService:Create(dropdown, TweenInfo.new(0.25, library.configuration.easingStyle, library.configuration.easingDirection), {
 						BackgroundColor3 = darkenColor(library.colors.main, 1.5),
 						ImageColor3 = darkenColor(library.colors.main, 2.5)
